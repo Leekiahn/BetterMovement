@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, IHandleJump, IHandleLook
 {
     private CharacterController controller;
     private FPSCamNoiseController noiseController;
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //--------------이동 메서드--------------//
-    private void HandleMovement()
+    public void HandleMovement()
     {
         //입력되는 키에 따라 걷는 속도 변경
         currentSpeed = crouchPressed ? crouchSpeed : (sprintPressed ? sprintSpeed : walkSpeed);
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //--------------앉기 메서드--------------//
-    private void HandleCrouch()
+    public void HandleCrouch()
     {
         if (crouchPressed)
         {
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //--------------점프 메서드--------------//
-    private void HandleJump()
+    public void HandleJump()
     {
         if (jumpPressed)
         {
@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //--------------시점 메서드--------------//
-    private void HandleLook()
+    public void HandleLook()
     {
         if (camContainer == null)
         {

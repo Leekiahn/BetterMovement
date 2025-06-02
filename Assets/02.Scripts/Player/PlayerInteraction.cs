@@ -11,14 +11,20 @@ public class PlayerInteraction : MonoBehaviour
     public Transform cam;
     public TextMeshProUGUI promptUI;
     [SerializeField] private GameObject curDetectObject;
-    
+
     public IInteractable interactableObject;
     public LayerMask interactableLayer;
 
-    [Header("UI references")]
+    [Header("references")]
     public Image crosshair;
     public GameObject keyUI;
-    public Sprite interactIcon;
+    public Sprite itemInteractIcon;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -39,15 +45,10 @@ public class PlayerInteraction : MonoBehaviour
             //상호작용 가능한 오브젝트일 때
             if (curDetectObject.TryGetComponent<IInteractable>(out interactableObject))
             {
-                promptUI.text = interactableObject.PromptUI();
                 keyUI.SetActive(true);
-
-                //아이템 오브젝트일 때, 크로스헤어 아이콘 활성화
-                if (DetectSpecificComponent<ItemObject>() != null)
-                {
-                    crosshair.sprite = interactIcon;
-                    crosshair.color = Color.white;
-                }
+                promptUI.text = interactableObject.PromptUI();
+                crosshair.sprite = interactableObject.GetCrosshairIcon();
+                crosshair.color = Color.white;
             }
         }
         else

@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//»óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ® ½ºÅ©¸³Æ®¿¡ »ó¼Ó
+//ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ ìŠ¤í¬ë¦½íŠ¸ì— ìƒì†
 public interface IInteractable
 {
     public string PromptUI();
     public void Interact();
+    public Sprite GetCrosshairIcon();
 }
