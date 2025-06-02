@@ -197,6 +197,10 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
         {
             sprintPressed = value.isPressed;
         }
+        else if (!controller.isGrounded)
+        {
+            sprintPressed = false;
+        }
     }
 
     private void OnJump(InputValue value)
