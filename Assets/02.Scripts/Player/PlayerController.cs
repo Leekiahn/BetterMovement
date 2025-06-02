@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
         cam = camContainer.GetComponentInChildren<CinemachineVirtualCamera>().transform;
 
         Cursor.lockState = CursorLockMode.Locked;   //마우스 잠금
+        standHead.position = cam.transform.position;
     }
 
     void Update()
