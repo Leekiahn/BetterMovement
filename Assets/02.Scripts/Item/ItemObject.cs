@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemObject : MonoBehaviour, IInteractable
@@ -31,6 +29,7 @@ public class ItemObject : MonoBehaviour, IInteractable
         {
             Debug.Log("rigidbody is null");
         }
+        audioSource.volume = clipVolume;
     }
 
     //--------------프롬프트 텍스트 반환 메서드--------------//
@@ -50,7 +49,6 @@ public class ItemObject : MonoBehaviour, IInteractable
     public void Interact()
     {
         //픽업 클립이 실행되고 종료되면 Destroy
-        audioSource.volume = clipVolume;
         audioSource.PlayOneShot(pickupClip);
         DisableItem();
         Destroy(gameObject, pickupClip.length);

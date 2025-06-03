@@ -1,9 +1,6 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Playables;
 
 public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, IHandleJump, IHandleLook
 {

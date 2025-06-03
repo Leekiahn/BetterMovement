@@ -17,6 +17,7 @@ public class DoorObject : MonoBehaviour, IInteractable
         {
             Debug.Log("audioSource is null");
         }
+        audioSource.volume = clipVolume;
     }
 
     public string PromptUI()
@@ -44,7 +45,6 @@ public class DoorObject : MonoBehaviour, IInteractable
                 CloseDoor();
                 break;
         }
-        audioSource.volume = clipVolume;
         audioSource.PlayOneShot(DoorClip);
     }
 
