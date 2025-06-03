@@ -121,7 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshairIcon: {fileID: 21300000, guid: fb23ae9c9c616a34a808b7e87e761a4b, type: 3}
   DoorClip: {fileID: 8300000, guid: 63f1728abb8db8642ab315ea88eaf60d, type: 3}
-  clipVolume: 0.2
 --- !u!82 &7943848809660818621
 AudioSource:
   m_ObjectHideFlags: 0
@@ -131,7 +130,7 @@ AudioSource:
   m_GameObject: {fileID: 8516893866423046038}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8568778997277381246, guid: 615cc4303675f3c4186a2c0d5c68bcd9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

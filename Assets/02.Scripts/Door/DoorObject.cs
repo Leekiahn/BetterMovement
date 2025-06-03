@@ -7,7 +7,6 @@ public class DoorObject : MonoBehaviour, IInteractable
 {
     public Sprite crosshairIcon;
     public AudioClip DoorClip;
-    [Range(0f, 1f)] public float clipVolume;
     private AudioSource audioSource;
     private bool isOpen = false;
 
@@ -17,7 +16,6 @@ public class DoorObject : MonoBehaviour, IInteractable
         {
             Debug.Log("audioSource is null");
         }
-        audioSource.volume = clipVolume;
     }
 
     public string PromptUI()
