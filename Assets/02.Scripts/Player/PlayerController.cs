@@ -2,10 +2,22 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum eState
+{
+    Idle,
+    Walk,
+    Sprint,
+    Jump
+}
+
 public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, IHandleJump, IHandleLook
 {
     private CharacterController controller;
+    private FPSCamShake camShake;
     private PlayerInteraction interaction;
+
+    [Header("State")]
+    public eState currentState;  //현재 상태
 
     [Header("Pressed Keys")]
     public bool sprintPressed = false;
@@ -51,6 +63,10 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
         {
             Debug.Log("interaction is null");
         }
+        if(!TryGetComponent<FPSCamShake>(out camShake))
+        {
+            Debug.Log("camShake is null");
+        }
         if (camContainer == null)
         {
             Debug.LogError("camContainer is null");
@@ -69,6 +85,7 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
 
     void Update()
     {
+        StateSwitch();
         HandleMovement();
         HandleCrouch();
         HandleJump();
@@ -77,6 +94,31 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
     void LateUpdate()
     {
         HandleLook();
+    }
+
+    //--------------상태 변경 메서드--------------//
+    public void StateSwitch()
+    {
+        if (!controller.isGrounded)
+        {
+            currentState = eState.Jump;
+            camShake.ShakeSwitch(eState.Jump);
+        }
+        else if (sprintPressed && controller.velocity.magnitude > 0.1f)
+        {
+            currentState = eState.Sprint;
+            camShake.ShakeSwitch(eState.Sprint);
+        }
+        else if (controller.velocity.magnitude > 0.1f)
+        {
+            currentState = eState.Walk;
+            camShake.ShakeSwitch(eState.Walk);
+        }
+        else
+        {
+            currentState = eState.Idle;
+            camShake.ShakeSwitch(eState.Idle);
+        }
     }
 
     //--------------이동 메서드--------------//
