@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, IHandleJump, IHandleLook
 {
     private CharacterController controller;
-    private FPSCamNoiseController noiseController;
     private PlayerInteraction interaction;
 
     [Header("Pressed Keys")]
@@ -47,10 +46,6 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
         if (!TryGetComponent<CharacterController>(out controller))
         {
             Debug.Log("controller is null");
-        }
-        if (!TryGetComponent<FPSCamNoiseController>(out noiseController))
-        {
-            Debug.Log("noiseController is null");
         }
         if (!TryGetComponent<PlayerInteraction>(out interaction))
         {
@@ -103,7 +98,7 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
         {
             controller.height = crouchHeight;
             controller.center = new Vector3(0f, crouchCenterY, 0f);
-            cam.position = Vector3.Lerp(cam.position, crouchHead.position, Time.deltaTime * crouchLerpSpeed);
+            camContainer.position = Vector3.Lerp(camContainer.position, crouchHead.position, Time.deltaTime * crouchLerpSpeed);
         }
         else
         {
@@ -112,7 +107,7 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
                 crouchPressed = false;
                 controller.height = standHeight;
                 controller.center = new Vector3(0f, 0f, 0f);
-                cam.position = Vector3.Lerp(cam.position, standHead.position, Time.deltaTime * crouchLerpSpeed);
+                camContainer.position = Vector3.Lerp(camContainer.position, standHead.position, Time.deltaTime * crouchLerpSpeed);
             }
             else
             {

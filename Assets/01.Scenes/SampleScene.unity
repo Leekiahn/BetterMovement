@@ -123,6 +123,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &30223343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30223344}
+  m_Layer: 0
+  m_Name: EquipPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &30223344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30223343}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 881584500}
+  m_Father: {fileID: 750441618}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124448320
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +408,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1f8cc2352c6c014190690caef75b206, type: 3}
+--- !u!1 &356715832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356715833}
+  m_Layer: 0
+  m_Name: CameraBrains
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &356715833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356715832}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1158760031}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590538622
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,8 +641,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1158760031}
   - {fileID: 1166470690}
+  - {fileID: 30223344}
   m_Father: {fileID: 1960953281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817550412
@@ -612,6 +676,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1960953281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &881584500 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+  m_PrefabInstance: {fileID: 1088108363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &885219280
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +783,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1088108363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 30223344}
+    m_Modifications:
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529470720601947093, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8554025452200712987, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
+      propertyPath: m_Name
+      value: EquipFlashLight
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: efeb935dc1bee194493b31d3e41fe0c8, type: 3}
 --- !u!1 &1092981476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1160,7 @@ GameObject:
   - component: {fileID: 1158760032}
   - component: {fileID: 1158760035}
   m_Layer: 0
-  m_Name: CamBrain
+  m_Name: FPS Virtual Camera Brain
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1049,12 +1175,12 @@ Transform:
   m_GameObject: {fileID: 1158760030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1238428765}
-  m_Father: {fileID: 750441618}
+  m_Father: {fileID: 356715833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1158760032
 AudioListener:
@@ -1160,7 +1286,7 @@ GameObject:
   - component: {fileID: 1166470690}
   - component: {fileID: 1166470691}
   m_Layer: 0
-  m_Name: Cam
+  m_Name: FPS Virtual Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1429,7 +1555,7 @@ GameObject:
   - component: {fileID: 1238428764}
   - component: {fileID: 1238428762}
   m_Layer: 0
-  m_Name: EquipCamBrain
+  m_Name: Equip Virtual Camera Brain
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2766,3 +2892,4 @@ SceneRoots:
   - {fileID: 1652241704}
   - {fileID: 263135796506454101}
   - {fileID: 634319722}
+  - {fileID: 356715833}

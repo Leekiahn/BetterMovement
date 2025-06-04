@@ -9,7 +9,7 @@ public enum eState
     Jump
 }
 
-public class FPSCamNoiseController : MonoBehaviour
+public class FPSCamShake : MonoBehaviour
 {
     //해당 오브젝트를 플레이어의 Input Action에 넣어주세요
     [Header("Gain Settings")]
