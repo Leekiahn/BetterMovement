@@ -32,24 +32,24 @@ public class FPSCamShake : MonoBehaviour
     void Start()
     {
         perlin.m_NoiseProfile = noiseSetting;
-        ShakeSwitch(eState.Idle);
+        ShakeSwitch(ePlayerState.Idle);
     }
 
     //--------------상태를 받아 진폭&주기 변경 메서드를 호출--------------//
-    public void ShakeSwitch(eState _state)
+    public void ShakeSwitch(ePlayerState _state)
     {
         switch (_state)
         {
-            case eState.Idle:
+            case ePlayerState.Idle:
                 NoiseHandler(amplitudeOnIdle, frequencyOnIdle);
                 break;
-            case eState.Walk:
+            case ePlayerState.Walk:
                 NoiseHandler(amplitudeOnWalk, frequencyOnWalk);
                 break;
-            case eState.Sprint:
+            case ePlayerState.Sprint:
                 NoiseHandler(amplitudeOnRun, frequencyOnRun);
                 break;
-            case eState.Jump:
+            case ePlayerState.Jump:
                 NoiseHandler(amplitudeOnJump, frequencyOnJump);
                 break;
 

@@ -2,7 +2,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum eState
+public enum ePlayerState
 {
     Idle,
     Walk,
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
     private PlayerInteraction interaction;
 
     [Header("State")]
-    public eState currentState;  //현재 상태
+    public ePlayerState currentState;  //현재 상태
 
     [Header("Pressed Keys")]
     public bool sprintPressed = false;
@@ -101,23 +101,23 @@ public class PlayerController : MonoBehaviour, IHandleMovement, IHandleCrouch, I
     {
         if (!controller.isGrounded)
         {
-            currentState = eState.Jump;
-            camShake.ShakeSwitch(eState.Jump);
+            currentState = ePlayerState.Jump;
+            camShake.ShakeSwitch(ePlayerState.Jump);
         }
         else if (sprintPressed && controller.velocity.magnitude > 0.1f)
         {
-            currentState = eState.Sprint;
-            camShake.ShakeSwitch(eState.Sprint);
+            currentState = ePlayerState.Sprint;
+            camShake.ShakeSwitch(ePlayerState.Sprint);
         }
         else if (controller.velocity.magnitude > 0.1f)
         {
-            currentState = eState.Walk;
-            camShake.ShakeSwitch(eState.Walk);
+            currentState = ePlayerState.Walk;
+            camShake.ShakeSwitch(ePlayerState.Walk);
         }
         else
         {
-            currentState = eState.Idle;
-            camShake.ShakeSwitch(eState.Idle);
+            currentState = ePlayerState.Idle;
+            camShake.ShakeSwitch(ePlayerState.Idle);
         }
     }
 
