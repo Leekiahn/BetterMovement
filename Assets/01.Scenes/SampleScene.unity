@@ -2486,6 +2486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31686f7fe6f587f418003d1f27aa984f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   sprintPressed: 0
   crouchPressed: 0
   jumpPressed: 0
@@ -2546,7 +2547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bfaad1456a71f4a810464bf5800ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curState: 0
   amplitudeOnIdle: 0.2
   frequencyOnIdle: 0.005
   amplitudeOnWalk: 0.2
